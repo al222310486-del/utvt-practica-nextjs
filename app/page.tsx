@@ -2,67 +2,47 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div style={{ display: 'flex', flex: 1, backgroundColor: '#fafafa', fontFamily: 'sans-serif', minHeight: 'calc(100vh - 90px)' }}>
+      <main style={{ 
+        display: 'flex', 
+        flexDirection: 'row', /* Esto fuerza las dos columnas */
+        width: '100%', 
+        maxWidth: '1152px', /* max-w-6xl */
+        margin: '0 auto', 
+        alignItems: 'center', 
+        gap: '4rem', /* gap-16 */
+        padding: '5rem 4rem' /* py-20 px-16 */
+      }}>
+        
+        {/* Columna Izquierda: Textos */}
+        <section style={{ flex: 1 }}>
+          <p style={{ marginBottom: '1.25rem', fontSize: '0.875rem', fontWeight: 'bold', letterSpacing: '0.16em', color: '#047857' }}>
+            UTVT
           </p>
+          <h1 style={{ maxWidth: '36rem', fontSize: '3rem', fontWeight: 'bold', letterSpacing: '-0.025em', color: '#022c22', lineHeight: 1.1, margin: 0 }}>
+            Ingeniería en Tecnologías de la Información e Innovación Digital
+          </h1>
+          <p style={{ marginTop: '1.5rem', maxWidth: '32rem', fontSize: '1rem', lineHeight: '1.75rem', color: '#52525b' }}>
+            Fórmate para crear soluciones digitales, desarrollar software y liderar la innovación tecnológica que impulsa a las organizaciones y a la sociedad.
+          </p>
+        </section>
+
+        {/* Columna Derecha: Imagen */}
+        <div style={{ 
+          flex: 1, 
+          overflow: 'hidden', 
+          borderRadius: '0.5rem', 
+          backgroundColor: '#022c22', 
+          boxShadow: '0 20px 25px -5px rgba(2, 44, 34, 0.15)' 
+        }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85"
+            alt="Circuito electrónico que representa la innovación tecnológica"
+            style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', display: 'block' }}
+          />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        
       </main>
     </div>
   );
